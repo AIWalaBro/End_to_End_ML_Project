@@ -13,7 +13,9 @@ from  dataclasses import dataclass
 from src.components.data_transformation import DataTransformation
 from src.components.data_transformation import DataTransformationconfig
 
-
+# checking our best model
+from src.components.model_trainer import ModelTrainer
+from src.components.model_trainer import ModeltrainerConfig
 
 @dataclass
 class DataIngestionConfig:
@@ -65,7 +67,15 @@ if __name__ == "__main__":
     
     # and then data transformation
     data_transformation = DataTransformation()
-    data_transformation.initiate_data_transformation(train_data,test_data)
+    
+    
+    # to save; it's taken return output from data transformation.py 
+    # last one variable  is not needed because we alreay save pickle file of preprocessor.pkl
+    train_array,test_array,_ = data_transformation.initiate_data_transformation(train_data,test_data)
+    
+    model_trainer = ModelTrainer()
+    print(model_trainer.initiate_model_trainer(train_array, test_array))
+    
         
     
     

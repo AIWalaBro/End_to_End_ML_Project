@@ -11,7 +11,7 @@ from sklearn.preprocessing import OneHotEncoder,StandardScaler
 
 from src.logger import logging
 from src.exception import CustomException
-from src.utils import save_object
+from src.utils import save_object,evaluate_models
 
 
 
@@ -110,15 +110,13 @@ class DataTransformation:
                 
                 logging.info(f"applying preprocessing object on training dataframe and testing dataframe")
                 
-                # input_feature_train_arr = preprocessing_obj.fit_transform(input_feature_train_df)
-                # input_feature_test_arr = preprocessing_obj.transform(input_feature_test_df)
+                
                 
                 input_feature_train_arr=preprocessing_obj.fit_transform(input_feature_train_df)
                 input_feature_test_arr=preprocessing_obj.transform(input_feature_test_df)
                 
                 
-                # train_arr = np.c_[input_feature_train_arr, np.array(target_feature_train_df)]
-                # test_arr = np.c_[input_feature_test_arr, np.array(target_feature_test_df)]
+
                 
                 train_arr = np.c_[
                 input_feature_train_arr, np.array(target_feature_train_df)
@@ -131,15 +129,11 @@ class DataTransformation:
                 # we are not save pickle file anyhwere so we providing path of picle file 
                 # to save and write down the function to save in utils
                 
-                # save_object(
-                #     file_path = self.data_transformation_config.preprocessor_obj_file_path,
-                #     obj = preprocessing_obj)
                 save_object(
-
-                file_path=self.data_transformation_config.preprocessor_obj_file_path,
-                obj=preprocessing_obj
-
-            )
+                    file_path = self.data_transformation_config.preprocessor_obj_file_path,
+                    obj = preprocessing_obj)
+                
+                
                 
                 # we are returning train_arr, testarr,data transformation and 
                 # pickle file path 
