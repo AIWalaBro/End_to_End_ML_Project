@@ -69,7 +69,6 @@ class ModelTrainer:
                 "BaggingRegressor":BaggingRegressor(), 
                 "ExtraTreesRegressor":ExtraTreesRegressor(), 
                 "GradientBoostingRegressor": GradientBoostingRegressor(),
-
                 "RandomForestRegressor": RandomForestRegressor(), 
                 
                 
