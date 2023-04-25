@@ -57,30 +57,30 @@ class ModelTrainer:
             models ={
                 
                 "LinearRegression" : LinearRegression(), 
-                # "RidgeRegression":Ridge(), 
-                # "LassoRegression": Lasso(), 
-                # "ElasticNet":ElasticNet(), 
-                # "BayesianRidge":BayesianRidge(), 
-                # "HuberRegressor":HuberRegressor(),
-                # "PassiveAggressiveRegressor":PassiveAggressiveRegressor(), 
-                # "SGDRegressor":SGDRegressor(),
+                "RidgeRegression":Ridge(), 
+                "LassoRegression": Lasso(), 
+                "ElasticNet":ElasticNet(), 
+                "BayesianRidge":BayesianRidge(), 
+                "HuberRegressor":HuberRegressor(),
+                "PassiveAggressiveRegressor":PassiveAggressiveRegressor(), 
+                "SGDRegressor":SGDRegressor(),
                 
                 "AdaBoostRegressor":AdaBoostRegressor(), 
-                # "BaggingRegressor":BaggingRegressor(), 
-                # "ExtraTreesRegressor":ExtraTreesRegressor(), 
+                "BaggingRegressor":BaggingRegressor(), 
+                "ExtraTreesRegressor":ExtraTreesRegressor(), 
                 "GradientBoostingRegressor": GradientBoostingRegressor(),
 
                 "RandomForestRegressor": RandomForestRegressor(), 
                 
                 
                 "DecisionTreeRegressor":DecisionTreeRegressor(), 
-                # "ExtraTreeRegressor": ExtraTreeRegressor(),
+                "ExtraTreeRegressor": ExtraTreeRegressor(),
                 
-                # "KNeighborsRegressor":KNeighborsRegressor(),
+                "KNeighborsRegressor":KNeighborsRegressor(),
                 "XGBRegressor":XGBRegressor(),
                 "CatBoostRegressor":CatBoostRegressor(),
-                # "SVR":SVR(),
-                # "MLPRegressor":MLPRegressor()
+                "SVR":SVR(),
+                "MLPRegressor":MLPRegressor()
                 
                 }
             
@@ -105,6 +105,24 @@ class ModelTrainer:
                     'n_estimators': [8,16,32,64,128,256]
                 },
                 "LinearRegression":{},
+                "RidgeRegression":{}, 
+                "LassoRegression": {}, 
+                "ElasticNet":{}, 
+                "BayesianRidge":{}, 
+                "HuberRegressor":{},
+                "PassiveAggressiveRegressor":{}, 
+                "SGDRegressor":{},
+                
+                "BaggingRegressor":{}, 
+                "ExtraTreesRegressor":{},
+                
+                "ExtraTreeRegressor": {},
+                
+                "KNeighborsRegressor":{},
+                
+                "SVR":{},
+                "MLPRegressor":{},
+                
                 "XGBRegressor":{
                     'learning_rate':[.1,.01,.05,.001],
                     'n_estimators': [8,16,32,64,128,256]
@@ -117,7 +135,8 @@ class ModelTrainer:
                 "AdaBoostRegressor":{
                     'learning_rate':[.1,.01,0.5,.001],
                     # 'loss':['linear','square','exponential'],
-                    'n_estimators': [8,16,32,64,128,256]
+                    'n_estimators': [8,16,32,64,128,256],
+                    
                 }
                 
             }
